@@ -3,8 +3,8 @@
 ### ====
 ### INPUT
 PROJECT_NAME=$1
-OWNER_NAME=USER-NAME
-TEMPORARY=/home/$OWNER_NAME/deployProjectWar 
+OWNER_NAME=user-name
+TEMPORARY=/home/$OWNER_NAME/deployWars 
 REPOSITORY=/home/$OWNER_NAME/$PROJECT_NAME/bin
 BACKUPDIR="$REPOSITORY/backup/"`date "+%Y%m%d_%H%M%S"`
 ### =====
@@ -13,7 +13,7 @@ BACKUPDIR="$REPOSITORY/backup/"`date "+%Y%m%d_%H%M%S"`
 echo $PROJECT_NAME
 if [ -z $PROJECT_NAME ]; then
     echo "> 프로젝트명을 입력하세요."
-	exit 0
+	exit 1
 fi
 
 # 1 백업 
@@ -26,7 +26,7 @@ cp -v ../bin/*.war ${BACKUPDIR}/
 echo "> Build 파일 복사"
 if [ -z $TEMPORARY/$PROJECT_NAME*.war ]; then
     echo $PROJECT_NAME " WAR 프로젝트가 없습니다."
-	exit 0
+	exit 1
 fi 
 
 cp -v $TEMPORARY/$PROJECT_NAME*.war $REPOSITORY/
