@@ -3,7 +3,7 @@
 ### ====
 ### INPUT
 PROJECT_NAME=$1
-OWNER_NAME=infochatter
+OWNER_NAME=USER-NAME
 TEMPORARY=/home/$OWNER_NAME/deployProjectWar 
 REPOSITORY=/home/$OWNER_NAME/$PROJECT_NAME/bin
 BACKUPDIR="$REPOSITORY/backup/"`date "+%Y%m%d_%H%M%S"`
